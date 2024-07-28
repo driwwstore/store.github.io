@@ -126,7 +126,7 @@
             <div class="service-item position-relative">
               <div class="icon text-center"><i class="bi bi-activity icon"></i></div>
               <h4 class="text-center"><a class="stretched-link">Pesan Online</a></h4>
-              <p>Anda bisa membeli produk kami melalui whatsapp</p>
+              <p>Anda bisa membeli produk kami melalui whatsapp admin Driw Store</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -174,16 +174,16 @@
                 <li><i class="bi bi-check"></i> <span>Free Autoscript VPN</span></li>
                 <li class="mb-5"><i class="bi bi-check"></i> <span>Singapore Server</span></li>
               </ul>
-              <label for="adigital10-ocean-quantity-input" class="form-label text-center w-100">Jumlah Akun</label>
+              <label for="vps-quantity-input" class="form-label text-center w-100">Jumlah Vps</label>
               <div class="d-flex justify-content-center align-items-center mb-3">
                 <div class="input-group text-center" style="max-width: 120px;">
-                  <button class="input-group-text" onclick="decrementQuantity('digital10-ocean-quantity-input')">-</button>
-                  <input type="text" id="digital10-ocean-quantity-input" class="form-control text-center" value="1" min="1">
-                  <button class="input-group-text" onclick="incrementQuantity('digital10-ocean-quantity-input')">+</button>
+                  <button class="input-group-text" onclick="decrementQuantity('vps-quantity-input')">-</button>
+                  <input type="text" id="vps-quantity-input" class="form-control text-center" value="1" min="1">
+                  <button class="input-group-text" onclick="incrementQuantity('vps-quantity-input')">+</button>
                 </div>
               </div>
               <div class="d-flex justify-content-center">
-                <button class="btn btn-primary buy-btn" onclick="updateWhatsAppLink('digital10-ocean-quantity-input', 'Vps DO')">Beli Via WhatsApp</button>
+                <button class="btn btn-primary buy-btn" onclick="updateWhatsAppLinkForVps()">Beli Via WhatsApp</button>
               </div>
             </div>
           </div>
@@ -201,16 +201,16 @@
 				<li><i class="bi bi-check"></i> <span>Domain .WORKS</span></li>
                 <li class="mb-5"><i class="bi bi-check"></i> <span>Dan Lain Lain</span></li>
               </ul>
-              <label for="adigital-ocean-quantity-input" class="form-label text-center w-100">Jumlah Akun</label>
+              <label for="domain-quantity-input" class="form-label text-center w-100">Jumlah Domain</label>
               <div class="d-flex justify-content-center align-items-center mb-3">
                 <div class="input-group text-center" style="max-width: 120px;">
-                  <button class="input-group-text" onclick="decrementQuantity('digital-ocean-quantity-input')">-</button>
-                  <input type="text" id="digital-ocean-quantity-input" class="form-control text-center" value="1" min="1">
-                  <button class="input-group-text" onclick="incrementQuantity('digital-ocean-quantity-input')">+</button>
+                  <button class="input-group-text" onclick="decrementQuantity('domain-quantity-input')">-</button>
+                  <input type="text" id="domain-quantity-input" class="form-control text-center" value="1" min="1">
+                  <button class="input-group-text" onclick="incrementQuantity('domain-quantity-input')">+</button>
                 </div>
               </div>
               <div class="d-flex justify-content-center">
-                <button class="btn btn-primary buy-btn" onclick="updateWhatsAppLink('digital-ocean-quantity-input', 'Domain')">Beli Via WhatsApp</button>
+                <button class="btn btn-primary buy-btn" onclick="updateWhatsAppLinkForDomain()">Beli Via WhatsApp</button>
               </div>
             </div>
           </div>
@@ -253,16 +253,16 @@
 				<li><i class="bi bi-check"></i> <span>Termius, Jetbrains, Heroku</span></li>
                 <li><i class="bi bi-check"></i> <span>Dan Masih Banyak Benefit Lainnya</span></li>
               </ul>
-              <label for="vultr-quantity-input" class="form-label text-center w-100">Jumlah Akun</label>
+              <label for="ghs-quantity-input" class="form-label text-center w-100">Jumlah Akun</label>
     <div class="d-flex justify-content-center align-items-center mb-3">
       <div class="input-group text-center" style="max-width: 120px;">
-        <button class="input-group-text" onclick="decrementQuantity('vultr-quantity-input')">-</button>
-        <input type="text" id="vultr-quantity-input" class="form-control text-center" value="1" min="1">
-        <button class="input-group-text" onclick="incrementQuantity('vultr-quantity-input')">+</button>
+        <button class="input-group-text" onclick="decrementQuantity('ghs-quantity-input')">-</button>
+        <input type="text" id="ghs-quantity-input" class="form-control text-center" value="1" min="1">
+        <button class="input-group-text" onclick="incrementQuantity('ghs-quantity-input')">+</button>
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <button class="btn btn-primary buy-btn" onclick="updateWhatsAppLinkForVultr()">Beli Via WhatsApp</button>
+      <button class="btn btn-primary buy-btn" onclick="updateWhatsAppLinkForGhs()">Beli Via WhatsApp</button>
     </div>
   </div>
 </div>
@@ -571,7 +571,7 @@
     function updateWhatsAppLink(inputId, productName) {
       let quantity = document.getElementById(inputId).value;
       let encodedProductName = encodeURIComponent(productName);
-      let whatsappLink = `https://wa.me/6281211356037?text=%20%23buy%20${encodedProductName}%20${quantity}`;
+      let whatsappLink = `https://wa.me/6281211356037?text=%20%23Buy%20${encodedProductName}%20${quantity}`;
       window.open(whatsappLink, '_blank');
     }
   </script>
@@ -590,24 +590,22 @@
       }
     }
   
-    function updateWhatsAppLinkForVultr() {
-      let quantity = document.getElementById('vultr-quantity-input').value;
-      let whatsappLink = `https://wa.me/6281211356037?text=Saya Ingin Order%20Github Student Developer Pack%20${quantity}`;
+    function updateWhatsAppLinkForVps() {
+      let quantity = document.getElementById('vps-quantity-input').value;
+      let whatsappLink = `https://wa.me/6281211356037?text=Saya Mau Order%20Vps DigitalOcean%20${quantity}`;
       window.open(whatsappLink, '_blank');
     }
-    function updateWhatsAppLinkForRDP() {
-      let quantity = document.getElementById('rdp-quantity-input').value;
-      let whatsappLink = `https://wa.me/6281211356037?text=Saya Ingin Order%20RDP/VPS 3 BULAN%20${quantity}`;
+    function updateWhatsAppLinkForDomain() {
+      let quantity = document.getElementById('domain-quantity-input').value;
+      let whatsappLink = `https://wa.me/6281211356037?text=Saya Mau Order%20Domain%20${quantity}`;
       window.open(whatsappLink, '_blank');
     }
-    function updateWhatsAppLinkForRDP1() {
-      let quantity = document.getElementById('rdp1-quantity-input').value;
-      let whatsappLink = `https://wa.me/6281211356037?text=Saya Ingin Order%2GITUB STUDENT%20${quantity}`;
+    function updateWhatsAppLinkForGhs() {
+      let quantity = document.getElementById('ghs-quantity-input').value;
+      let whatsappLink = `https://wa.me/6281211356037?text=Saya Mau Order%20Github Student Developer Pack%20${quantity}`;
       window.open(whatsappLink, '_blank');
     }
   </script>
 </body>
 
-
-<!-- Mirrored from fzicloud.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 28 Jul 2024 10:51:01 GMT -->
 </html>
